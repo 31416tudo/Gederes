@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Platillo;
 use App\Ingrediente;
+use App\Detallesplato;
+use Illuminate\Support\Facades\Input;
 
 class platilloController extends Controller
 {
@@ -16,6 +18,13 @@ class platilloController extends Controller
     	$platillo->precio = $request->precio;
     	$platillo->imagen = $request->imagen;
     	$platillo->save();
+        $arraydetalles = Input::get('ingredientes');
+        foreach ($arraydetalles as $nombreingrediente) {
+            $detallesplato = new detallesplato;
+            $detallesplato->platillo = $request->nombrePlatillo;
+            $detallesplato->ingredientes=$nombreingrediente;
+            $detallesplato->save();
+        }
         $platillo = platillo::all();
         $ingredientes = ingrediente::all();
     	return view('paginas/menu')->with('platillos',$platillo)->with('ingredientes',$ingredientes);
