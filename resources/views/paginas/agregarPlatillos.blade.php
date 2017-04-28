@@ -19,7 +19,7 @@
     <script src="./js/blocs.min.js"></script>
     <script src="./js/jqBootstrapValidation.js"></script>
     <script src="./js/formHandler.js"></script>
-    <title>AgergarPlatillo</title>
+    <title>Agregar Platillo</title>
     <!-- Google Analytics -->
     <!-- Google Analytics END -->
 </head>
