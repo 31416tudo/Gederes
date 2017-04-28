@@ -32,6 +32,23 @@
     <!-- Main container -->
     <div class="page-container">
         @include ('templates/navbar')
+        <br>
+          <div class="bloc l-bloc bgc-white" id="bloc-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="text-center"><a href="" class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon"  data-toggle="modal" data-target="#AgregarIn">Agregar Ingrediente</a></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-center"><a href="" class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon "  data-toggle="modal" data-target="#EditarIn">Modificar Ingrefiente</a></div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="text-center"><a href="" class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon" data-toggle="modal" data-target="#EliminarIn">Eliminar Ingrediente</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
         <!-- bloc-12 -->
         <form action="{{route('ingredienteinsertado')}}" method="post">
         {{ csrf_field() }}
@@ -58,6 +75,29 @@
         <!-- ScrollToTop Button END-->
     </div>
     <!-- Main container END -->
+    
+    
+    
+    <!-- Modal 1-->
+<div id="AgregarIn" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+         @include ('templates/agregaringrediente')
+  </div>
+</div>
+        <!-- Modal 2-->
+<div id="EditarIn" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+         @include ('templates/modificaringrediente')
+  </div>
+</div>
+        <!-- Modal 3-->
+<div id="EliminarIn" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+      @include ('templates/eliminaringrdiente')
+  </div>
+</div>
+
+
 </body>
 
 </html>

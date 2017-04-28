@@ -37,15 +37,16 @@
                                 <h3 class="mg-clear">Log In</h3>
                             </div>
                             <div class="panel-body">
-                                <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
+                                <form id="form_1" role="form" method="POST" action="{{ route('login') }}" >
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Ingresa el Usuario de la Mesa</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
+                            <label>Ingresa el Usuario de la Mesa
+                            <br>
+                            </label>
+                            <div>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required >
+                                
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -55,9 +56,11 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Ingresa la clave de acceso</label>
+                            <label>Ingresa la clave de acceso
+                            <br>
+                            </label>
 
-                            <div class="col-md-6">
+                            <div>
                                 <input id="password" type="password" class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
@@ -67,28 +70,26 @@
                                 @endif
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
+                        <div class="fix">
+                            <div class="form-group">
+                                <div class="col-md-3 ">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordarme
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
+                            <div class="form-group">
+                                <div class="col-md-1 ">
+                                    <button type="submit" class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon" style="background: #ffffff;">
+                                        Entrar
+                                    </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
+                                </div>
                             </div>
-                        </div>
+                        </div>      
                     </form>
 
 

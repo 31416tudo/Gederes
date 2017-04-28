@@ -1,6 +1,5 @@
 <header> 
     <!-- Main container -->
-    <div class="page-container">
         <!-- bloc-0 -->
         <div class="bloc sticky-nav full-width-bloc bgc-white l-bloc" id="bloc-0">
             <div class="container">
@@ -27,5 +26,4 @@
             </div>
         </div>
         <!-- bloc-0 END -->
-    </div>
 </header>

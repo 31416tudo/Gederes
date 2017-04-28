@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Platillo;
+use App\Ingrediente;
 
 class platilloController extends Controller
 {
@@ -16,8 +17,10 @@ class platilloController extends Controller
     	$platillo->imagen = $request->imagen;
     	$platillo->save();
         $platillo = platillo::all();
-    	return view('paginas/menu')->with('platillos',$platillo);
-    }
+        $ingredientes = ingrediente::all();
+    	return view('paginas/menu')->with('platillos',$platillo)->with('ingredientes',$ingredientes);
+        
+    }   
     public function update(Request $request){
     	$platillo = platillo::find($request->nombrePlatillo);
     	$platillo->descripcion = $request->descripcion;
@@ -26,7 +29,8 @@ class platilloController extends Controller
     	$platillo->imagen = $request->imagen; 
     	$platillo->save();
         $platillo = platillo::all();
-    	return view('paginas/menu')->with('platillos',$platillo);
+        $ingredientes = ingrediente::all();
+    	return view('paginas/menu')->with('platillos',$platillo)->with('ingredientes',$ingredientes);
     }
     public function delete(Request $request){ 
     	$platillo = platillo::find($request->nombrePlatillo);
@@ -36,7 +40,8 @@ class platilloController extends Controller
     }
     public function menu(){
         $platillo = platillo::all();
-        return view('paginas/menu')->with('platillos',$platillo);
+        $ingredientes = ingrediente::all();
+        return view('paginas/menu')->with('platillos',$platillo)->with('ingredientes',$ingredientes);
     }
     public function showdelete(){
         $platillo = platillo::all();

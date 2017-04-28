@@ -40,18 +40,14 @@
         <div class="bloc l-bloc bgc-white" id="bloc-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="text-center"><a href="{{route('agregarPlatillo')}}" class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon">Agregar Platillo</a></div>
+                    <div class="col-sm-4">
+                        <div class="text-center"><a class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon" data-toggle="modal" data-target="#AgregarPl">Agregar Platillo</a></div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="text-center"><a href="{{route('actualizarPlatillo')}}" class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon">Modificar Platillo</a></div>
+                    <div class="col-sm-4">
+                        <div class="text-center"><a href="{{route('actualizarPlatillo')}}" class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon" data-toggle="modal" data-target="#ModificarPl">Modificar Platillo</a></div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="text-center"><a href="{{route('eliminarPlatillo')}}" class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon">Eliminar Platillo</a></div>
+                    <div class="col-sm-4">
+                        <div class="text-center"><a href="{{route('eliminarPlatillo')}}" class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon" data-toggle="modal" data-target="EliminarPl">Eliminar Platillo</a></div>
                     </div>
                 </div>
             </div>
@@ -83,7 +79,8 @@
                         {{ csrf_field() }}   
                             <div class="form-group">
                                 <label>Comentarios<br><br></label>
-                                <input class="form-group" id="comentarios" name="comentarios" type="text" placeholder="Ingresa comentarios"/>
+                                <textarea class="form-control" rows="4" cols="50" id="textarea_229" placeholder="Ingresa comentarios"></textarea>
+                            
                             
                             </div>
                             <div class="form-group">
@@ -98,6 +95,24 @@
         <!-- bloc-11 END -->
     </div>
     <!-- Main container END -->
+     <!-- Modal 1-->
+<div id="AgregarPl" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+         @include('templates/agregarplatillo',['ingredientes'=>$ingredientes])
+  </div>
+</div>
+        <!-- Modal 2-->
+<div id="EditarPl" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+         
+  </div>
+</div>
+        <!-- Modal 3-->
+<div id="EliminarPl" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+      
+  </div>
+</div>
 </body>
 
 </html>
