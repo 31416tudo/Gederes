@@ -44,10 +44,10 @@
                         <div class="text-center"><a class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon" data-toggle="modal" data-target="#AgregarPl">Agregar Platillo</a></div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="text-center"><a href="{{route('actualizarPlatillo')}}" class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon" data-toggle="modal" data-target="#ModificarPl">Modificar Platillo</a></div>
+                        <div class="text-center"><a class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon" data-toggle="modal" data-target="#ModificarPl">Modificar Platillo</a></div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="text-center"><a href="{{route('eliminarPlatillo')}}" class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon" data-toggle="modal" data-target="EliminarPl">Eliminar Platillo</a></div>
+                        <div class="text-center"><a class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon" data-toggle="modal" data-target="#EliminarPl">Eliminar Platillo</a></div>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                         {{ csrf_field() }}   
                             <div class="form-group">
                                 <label>Comentarios<br><br></label>
-                                <textarea class="form-control" rows="4" cols="50" id="textarea_229" placeholder="Ingresa comentarios"></textarea>
+                                <textarea class="form-control" rows="4" cols="50" id="textarea_229" name="comentarios" placeholder="Ingresa comentarios"></textarea>
                             
                             
                             </div>
@@ -102,15 +102,15 @@
   </div>
 </div>
         <!-- Modal 2-->
-<div id="EditarPl" class="modal fade" role="dialog">
+<div id="ModificarPl" class="modal fade" role="dialog">
   <div class="modal-dialog">
-         
+         @include('templates/actualizarplatillo',['ingredientes'=>$ingredientes])
   </div>
 </div>
         <!-- Modal 3-->
 <div id="EliminarPl" class="modal fade" role="dialog">
   <div class="modal-dialog">
-      
+        @include('templates/eliminarplatillo',['ingredientes'=>$ingredientes])
   </div>
 </div>
 </body>
