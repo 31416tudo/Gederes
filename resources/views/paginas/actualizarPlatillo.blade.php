@@ -29,14 +29,14 @@
     <div class="page-container">
         <!-- bloc-15 -->
         <div class="bloc bgc-white l-bloc" id="bloc-15">
-            <div class="container bloc-md">
+            <div class=" bloc-md">
                 <div class="row">
                     <div class="col-sm-12">
                         <div>
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-12">
                                             <form action="{{route('actualizado')}}" method="post" id="form_18266" novalidate>
                                             {{ method_field('PUT') }}
                                             {{ csrf_field() }}

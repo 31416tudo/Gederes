@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Platillo;
-use App\Ingrediente;
+use App\Ingrediente; 
 use App\Detallesplato;
 use Illuminate\Support\Facades\Input;
 

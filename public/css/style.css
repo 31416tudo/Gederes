@@ -24,6 +24,9 @@ body {
     border-color: #880101;
 }
 
+#bloc-15 form{
+    padding: 3rem;
+}
 
 a:hover {
     text-decoration: none;

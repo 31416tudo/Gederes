@@ -29,7 +29,7 @@
     <div class="page-container">
         <!-- bloc-15 -->
         <div class="bloc bgc-white l-bloc" id="bloc-15">
-            <div class="container bloc-md">
+            <div class=" bloc-md">
                 <div class="row">
                     <div class="col-sm-12">
                         <div>
