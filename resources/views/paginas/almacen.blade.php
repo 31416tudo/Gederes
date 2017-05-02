@@ -37,29 +37,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4">
-                        <div class="text-center"><a href="" class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon"  data-toggle="modal" data-target="#AgregarIn">Agregar Ingrediente</a></div>
+                        <div class="text-center"><a class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon"  data-toggle="modal" data-target="#AgregarIn">Agregar Ingrediente</a></div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="text-center"><a href="" class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon "  data-toggle="modal" data-target="#EditarIn">Modificar Ingrefiente</a></div>
+                        <div class="text-center"><a class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon "  data-toggle="modal" data-target="#EditarIn">Modificar Ingrefiente</a></div>
                     </div>
                     <div class="col-sm-4">
-                        <div class="text-center"><a href="" class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon" data-toggle="modal" data-target="#EliminarIn">Eliminar Ingrediente</a></div>
+                        <div class="text-center"><a class="btn btn-lg btn-rd btn-wire wire-btn-light-salmon" data-toggle="modal" data-target="#EliminarIn">Eliminar Ingrediente</a></div>
                     </div>
                 </div>
             </div>
         </div>
         <br>
         <!-- bloc-12 -->
-        <form action="{{route('ingredienteinsertado')}}" method="post">
-        {{ csrf_field() }}
-            <table style="width:70%" align="center">
-                <tr>
-                    <td> <input type='text' name='nombreIngrediente' id='nombreIngrediente' placeholder="Inserta el ingrediente"> </td>
-                    <td> <input box-sizing="border-box" width="100%" type='text' name='cantidad' id='cantidad' placeholder="Inserta la cantidad"></td>
-                    <td> <button type="submit" class="btn btn-wire btn-rd btn-xl wire-btn-light-salmon">Insertar</button> </td>
-                <tr>
-            </table>
-        </form>
         <form action="{{route('almacen')}}" method="post">
             <table style="width:70%" align="center">
                 <tr>
@@ -93,7 +83,7 @@
         <!-- Modal 3-->
 <div id="EliminarIn" class="modal fade" role="dialog">
   <div class="modal-dialog">
-      @include ('templates/eliminaringrdiente')
+      @include ('templates/eliminaringrediente')
   </div>
 </div>
 

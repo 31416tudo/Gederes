@@ -14,14 +14,16 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <form id="form_46627" novalidate>
-                                            <div class="form-group"><label>Nombre</label><input class="form-control" id="input_2915" /></div>
-                                            <div class="form-group"><label>Cantidad<br></label><input class="form-control" id="input_2643" /></div>
+                                        <form action="{{route('ingredienteinsertado')}}"method="post"id="form_46627" novalidate>
+                                           {{ csrf_field() }} 
+                                            <div class="form-group"><label>Nombre</label><input class="form-control" name="nombreIngrediente" id="input_2915" /></div>
+                                            <div class="form-group"><label>Cantidad<br></label><input class="form-control" name="cantidad" id="input_2643" /></div>
+                                            <div class="panel-footer"><button type="submit" class="btn btn-d btn-lg">OK</a></div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel-footer"><a href="index.html" class="btn btn-d btn-lg">OK</a></div>
+                            
                         </div>
                     </div>
                 </div>

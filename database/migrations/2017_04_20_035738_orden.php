@@ -17,6 +17,7 @@ class Orden extends Migration
             $table->increments('id_orden');
             $table->string('comentarios');
             $table->string('estatus');
+            $table->decimal('monto', 10,2);
             $table->integer('cliente')->unsigned()->nullable();
             $table->foreign('cliente')->references('id')->on('users')->OnDelete('cascade');
             $table->timestamps();

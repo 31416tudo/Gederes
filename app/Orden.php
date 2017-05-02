@@ -8,6 +8,6 @@ class Orden extends Model
 {
     protected $table='orden';
     public $primaryKey = 'id_orden';
-    protected $fillable = ['comentarios', 'cliente', 'estatus'];
+    protected $fillable = ['comentarios', 'cliente', 'estatus', 'monto'];
     public $timestamps = [ "created_at" ];
 }

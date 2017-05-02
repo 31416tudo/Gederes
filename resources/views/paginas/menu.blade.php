@@ -37,6 +37,7 @@
         </div>
         <!-- bloc-4 END -->
         <!-- bloc-5 -->
+        @if(Auth::user()->rol == 'chef')
         <div class="bloc l-bloc bgc-white" id="bloc-5">
             <div class="container">
                 <div class="row">
@@ -52,8 +53,11 @@
                 </div>
             </div>
         </div>
+        @endif
         <!-- bloc-5 END -->
         <!-- bloc-6 -->
+        <form class="form-group" action="{{route('ordenenviada')}}" method="post">
+        {{ csrf_field() }}
         <div class="bloc bgc-white l-bloc" id="bloc-6">
             <div class="container bloc-lg">
                 <div class="row">
@@ -75,8 +79,7 @@
                 <div class="row">
                     <div class="col-sm-12">
 
-                        <form class="form-group" action="{{route('ordenenviada')}}" method="post">
-                        {{ csrf_field() }}   
+                           @if(Auth::user()->rol == 'cliente')
                             <div class="form-group">
                                 <label>Comentarios<br><br></label>
                                 <textarea class="form-control" rows="4" cols="50" id="textarea_229" name="comentarios" placeholder="Ingresa comentarios"></textarea>
@@ -86,6 +89,7 @@
                             <div class="form-group">
                                 <button type="submit" class="btn btn-d btn-lg">Enviar Orden</button>
                             </div>
+                            @endif
                         </form>
 
                     </div>

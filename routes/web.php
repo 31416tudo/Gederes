@@ -37,10 +37,13 @@ Route::put('/menu', 'platilloController@update')->name('actualizado');
 Route::post('/menu', 'platilloController@store')->name('insertado');
 Route::post('/ordenenviada', 'ordenController@crearorden')->name('ordenenviada');
 Route::get('/chef', 'ordenController@muestraordenes')->name('chef');
+Route::get('/caja', 'ordenController@muestraordenescaja')->name('caja');
 Route::get('/almacen','ingredientesController@almacen')->name('almacen');
 Route::post('/ingredienteinsertado', 'ingredientesController@store')->name('ingredienteinsertado');
 Route::put('/ingredienteactualizado', 'ingredientesController@update')->name('ingredienteactualizado'); 
+Route::delete('/ingredienteeliminado', 'ingredientesController@delete')->name('ingredienteeliminado');
 Route::put('/chef/listo', 'ordenController@updateorden')->name('listo');
+Route::put('/chef/pagado', 'ordenController@ordenpagada')->name('pagado');
 
 Auth::routes();
 

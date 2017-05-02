@@ -15,7 +15,7 @@
                                 <h6 class="mg-md text-right "><strong>$ {{$platillo->precio}}</strong></h6>
                             </div>
                             <div class="col-sm-6">
-                                <div class="radio-inline"><label><input type="radio" name="radioSetne" value="option1" />Ordenar</label></div>
+                                <div class="radio-inline"><label><input type="checkbox" name="ordenes[]" value="{{$platillo->nombrePlatillo}}"/>Ordenar</label></div>
                             </div>
                         </div>
                     </div>
@@ -25,3 +25,4 @@
     </div>
 @endforeach
 
+  

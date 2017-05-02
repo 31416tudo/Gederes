@@ -14,14 +14,20 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <form id="form_46627" novalidate>
-                                            <div class="form-group"><label>Nombre de Ingrediente a modificar</label><input class="form-control" id="input_2915" /></div>
-                                            <div class="form-group"><label>Nueva Cantidad<br></label><input class="form-control" id="input_2643" /></div>
+                                        <form method="post" action="{{route('ingredienteactualizado')}}" id="form_46627" novalidate>
+                                        {{ csrf_field() }}
+                                        {{ method_field('PUT') }} 
+                                           <div class="form-group">
+                                                    <label>Nombre del ingrediente a modificar<br></label>
+                                                    @include('templates/showIngredientes', ['ingredientes'=>$ingredientes])
+                                                </div>
+                                            <div class="form-group"><label>Nueva Cantidad<br></label><input name="cantidad" class="form-control" id="input_2643" /></div>
+                                            <div class="panel-footer"><button type="submit" class="btn btn-wire btn-rd btn-xl wire-btn-light-salmon">Actualizar</button></div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel-footer"><a href="index.html" class="btn btn-d btn-lg">OK</a></div>
+                            
                         </div>
                     </div>
                 </div>

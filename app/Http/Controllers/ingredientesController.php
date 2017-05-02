@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace App\Http\Controllers;
 
@@ -39,5 +39,11 @@ class ingredientesController extends Controller
     	$ingrediente->save();
         $ingredientes = ingrediente::all();
     	return view('paginas/almacen')->with('ingredientes',$ingredientes);
+    }
+    public function delete(Request $request){
+        $ingrediente = ingrediente::find($request->nombreIngrediente);
+        $ingrediente->delete();
+        $ingredientes = ingrediente::all();
+        return view('paginas/almacen')->with('ingredientes',$ingredientes);
     }
 }
