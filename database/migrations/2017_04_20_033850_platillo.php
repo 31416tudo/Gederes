@@ -17,6 +17,7 @@ class Platillo extends Migration
             $tabla->string('nombrePlatillo', 100);
             $tabla->primary('nombrePlatillo');
             $tabla->string('descripcion');
+            $tabla->string('estatus')->nullable();
             $tabla->string('tipo');
             $tabla->decimal('precio',5,2);
             $tabla->string('imagen');

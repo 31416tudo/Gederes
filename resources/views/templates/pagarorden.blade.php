@@ -16,6 +16,7 @@
                                     @if($orden->id_orden == $detalleorden->id_orden)
                                         <li>
                                             <h3 class="mg-md">{{$detalleorden->platillo}}</h3>
+                                            <h4 class="mg-clear"></h4>
                                         </li>
                                     @endif
                                 @endforeach 

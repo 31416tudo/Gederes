@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\orden;
+use App\Ingrediente;
 use App\DetallesOrden;
+use App\DetallesPlato;
 use Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
@@ -50,6 +52,16 @@ class ordenController extends Controller
     	$orden->comentarios = $request->comentarios;
     	$orden->cliente = Auth::id();
         $arrayorden = Input::get('ordenes');
+        foreach ($arrayorden as $nombreplatillo) {
+            $resta= DB::table('detallesplato')->select('ingredientes')->where('platillo', '=', $nombreplatillo)->get();
+            foreach ($resta as $nombreIngrediente) {
+                $nombre=$nombreIngrediente->ingredientes;
+                $ing = ingrediente::find($nombre);
+                $ing->cantidad = $ing->cantidad - 1;
+                $ing->save();
+
+            }
+        }
         foreach($arrayorden as $nombreplatillo){
             $total = DB::table('platillo')->select('precio')->where('nombrePlatillo','=',$nombreplatillo)->get();
             foreach($total as $precio){

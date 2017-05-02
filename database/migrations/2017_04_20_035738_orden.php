@@ -15,7 +15,7 @@ class Orden extends Migration
     {
         Schema::create('orden', function(Blueprint $table){
             $table->increments('id_orden');
-            $table->string('comentarios');
+            $table->string('comentarios')->nullable();
             $table->string('estatus');
             $table->decimal('monto', 10,2);
             $table->integer('cliente')->unsigned()->nullable();

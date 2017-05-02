@@ -9,6 +9,6 @@ class Platillo extends Model
 	protected $table='platillo';
     public $primaryKey = 'nombrePlatillo';
     public $incrementing = false;
-    protected $fillable = ['nombrePlatillo', 'descripcion', 'tipo', 'precio', 'imagen'];
+    protected $fillable = ['nombrePlatillo', 'descripcion', 'tipo', 'precio', 'imagen', 'estatus'];
     public $timestamps = false;
 }
